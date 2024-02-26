@@ -1,5 +1,5 @@
 import {NavigationContainer} from "@react-navigation/native";
-import AppStack from "./Stack/AppStack";
+import AppStack from "./navigation/Stack/AppStack";
  function App() {
     return (
         <NavigationContainer>

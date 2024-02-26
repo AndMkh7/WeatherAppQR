@@ -8,9 +8,14 @@ export default function WeatherScreen({route}) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.contentContainer}>
       <Text>Do you really want to know the weather in the {cityName} city ?</Text>
       <View style={styles.buttonsBox}>
-        <TouchableOpacity style={styles.submitBox} onPress={() => navigation.navigate("CityWeatherScreen")}>
+        <TouchableOpacity style={styles.submitBox} onPress={() => navigation.navigate({
+      name: "CityWeatherScreen",
+      params: { cityName: cityName },
+    })}
+        >
           <Text style={styles.yesTxt}>
             Yes 
           </Text>
@@ -22,6 +27,8 @@ export default function WeatherScreen({route}) {
         </TouchableOpacity>
 
       </View>
+      </View>
+      
     </View>
   );
 }
