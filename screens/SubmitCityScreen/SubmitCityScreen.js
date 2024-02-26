@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from "@react-navigation/native";
-
+import styles from "./style";
 export default function WeatherScreen({route}) {
           const { cityName } = route.params;
           const navigation = useNavigation();
@@ -25,35 +25,3 @@ export default function WeatherScreen({route}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonsBox: {
-    flexDirection: 'row',
-    marginTop:15,
-    gap:40
-  },
-  cancelBox: {
-    borderWidth:2,
-    borderRadius:3,
-    borderColor:'red',
-    padding:5
-  },
-  submitBox: {
-    borderWidth:2,
-    borderRadius:3,
-    borderColor:'green',
-    padding:5
-  },
-  yesTxt:{
-    color:'green'
-  },
-  noTxt:{
-color:'red'
-  }
-});

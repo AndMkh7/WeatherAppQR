@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { Camera } from "expo-camera";
-import { useNavigation } from '@react-navigation/native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation } from "@react-navigation/native";
+import { BarCodeScanner } from "expo-barcode-scanner";
+import styles from "./style";
 export default function ScannerScreen() {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -22,7 +23,10 @@ export default function ScannerScreen() {
     setScanned(true);
     setCityName(data);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    navigation.navigate({ name: 'SubmitCityScreen', params: { cityName: data } });
+    navigation.navigate({
+      name: "SubmitCityScreen",
+      params: { cityName: data },
+    });
   };
 
   if (hasPermission === null) {
@@ -36,7 +40,6 @@ export default function ScannerScreen() {
     <View style={styles.container}>
       <Camera
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-      
         barCodeScannerSettings={{
           barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
         }}
@@ -45,21 +48,3 @@ export default function ScannerScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: 'center',
-    justifyContent: "center",
-  },
-  screenAgainButton:{
-    backgroundColor: "white",
-    borderRadius: 8,
-    padding: 10,
-    margin: 10,
-    borderWidth: 1,
-    borderColor: "black",
-  }
-});
-
