@@ -24,7 +24,7 @@ export default function ScannerScreen() {
     setCityName(data);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     navigation.navigate({
-      name: "SubmitCityScreen",
+      name: "SubmitCity",
       params: { cityName: data },
     });
   };

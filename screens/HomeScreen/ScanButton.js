@@ -7,7 +7,7 @@ const ScanButton = () => {
   return (
     <TouchableOpacity
       style={styles.startButton}
-      onPress={() => navigation.navigate("ScannerScreen")}
+      onPress={() => navigation.navigate("Scanner")}
     >
       <Text style={styles.textStyle}>StartScan</Text>
     </TouchableOpacity>
