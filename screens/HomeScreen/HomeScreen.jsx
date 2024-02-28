@@ -3,8 +3,9 @@ import { Text, View, ImageBackground, Image } from "react-native";
 import ScanButton from "./ScanButton.jsx";
 import background from "../../assets/images/background.jpg";
 import styles from "./style.js";
+import { memo } from "react";
 
-export default function HomeScreen() {
+const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -28,4 +29,5 @@ export default function HomeScreen() {
       </ImageBackground>
     </View>
   );
-}
+};
+export default memo(HomeScreen);

@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 export const GlobalDataContext = createContext(undefined);
 
 function GlobalData({ children }) {
-  const [isLoading, setIsLoading] = useState(true);
   const [temperature, setTemperature] = useState(0);
   const [weatherCondition, setWeatherCondition] = useState(null);
   const [error, setError] = useState(null);
@@ -15,24 +14,13 @@ function GlobalData({ children }) {
     "Vanadzor",
     "Batumi",
     "Vienna",
-    "Yerevan",
     "Madrid",
     "Moscow",
     "Praha",
-    "Rome",
-    "Tbillisi",
-    "Berlin",
-    "Paris",
-    "Tehran",
-    "Athens",
-    "Lissabon",
-    "Montebello",
   ]);
   return (
     <GlobalDataContext.Provider
       value={{
-        isLoading,
-        setIsLoading,
         temperature,
         setTemperature,
         weatherCondition,

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { FlatList, SafeAreaView, ImageBackground } from "react-native";
+import { FlatList, SafeAreaView, ImageBackground, View } from "react-native";
 import { GlobalDataContext } from "../../context";
 import CityComponent from "./CityComponent";
 import background from "../../assets/images/background.jpg";
 import cityListStyles from "./style";
 
-export default function CitiesListScreen() {
+const CitiesListScreen = () => {
   const { citiesList } = useContext(GlobalDataContext);
 
   return (
@@ -24,4 +24,5 @@ export default function CitiesListScreen() {
       </ImageBackground>
     </SafeAreaView>
   );
-}
+};
+export default CitiesListScreen;

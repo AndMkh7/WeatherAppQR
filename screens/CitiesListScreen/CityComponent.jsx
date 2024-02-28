@@ -1,19 +1,19 @@
-import { useContext } from "react";
+import { memo, useContext, useCallback } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { GlobalDataContext } from "../../context";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./style";
 
-export default function CityComponent({ city }) {
+const CityComponent = ({ city }) => {
   const { setCityName } = useContext(GlobalDataContext);
   const navigation = useNavigation();
-  const handleNavigation = () => {
+  const handleNavigation = useCallback(() => {
     navigation.navigate({
       name: "CityWeather",
       params: { cityName: city },
     });
     setCityName(city);
-  };
+  }, [city, navigation, setCityName]);
   return (
     <View style={styles.cityItemContainer}>
       <TouchableOpacity style={styles.cityBox} onPress={handleNavigation}>
@@ -21,4 +21,5 @@ export default function CityComponent({ city }) {
       </TouchableOpacity>
     </View>
   );
-}
+};
+export default memo(CityComponent);

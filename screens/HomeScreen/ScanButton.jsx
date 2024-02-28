@@ -1,6 +1,7 @@
 import { TouchableOpacity, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./style";
+import { memo } from "react";
 
 const ScanButton = () => {
   const navigation = useNavigation();
@@ -14,4 +15,4 @@ const ScanButton = () => {
   );
 };
 
-export default ScanButton;
+export default memo(ScanButton);

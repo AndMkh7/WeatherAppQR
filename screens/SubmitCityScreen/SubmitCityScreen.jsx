@@ -3,15 +3,15 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import styles from "./style";
-export default function WeatherScreen({ route }) {
+const SubmitCityScreen = ({ route }) => {
   const { cityName } = route.params;
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text>
-          Are You really want to know the weather in the {cityName} city ?
+        <Text numberOfLines={2} ellipsizeMode="tail">
+          Are you sure you want to know the weather in the {cityName} city?
         </Text>
         <View style={styles.buttonsBox}>
           <TouchableOpacity
@@ -22,7 +22,7 @@ export default function WeatherScreen({ route }) {
                   name: "CityWeather",
                   params: { cityName: cityName },
                 },
-                { key: Math.random() }
+                { cityName: cityName, key: cityName }
               )
             }
           >
@@ -38,4 +38,6 @@ export default function WeatherScreen({ route }) {
       </View>
     </View>
   );
-}
+};
+
+export default SubmitCityScreen;

@@ -6,7 +6,7 @@ import { BarCodeScanner } from "expo-barcode-scanner";
 import { GlobalDataContext } from "../../context";
 import styles from "./style";
 
-export default function ScannerScreen() {
+const ScannerScreen = () => {
   const { hasPermission, setHasPermission, scanned, setScanned, setCityName } =
     useContext(GlobalDataContext);
   const navigation = useNavigation();
@@ -17,7 +17,6 @@ export default function ScannerScreen() {
       const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === "granted");
     };
-
     getCameraPermissions();
   }, []);
 
@@ -28,10 +27,9 @@ export default function ScannerScreen() {
     }
   }, [isFocused]);
 
-  const handleBarCodeScanned = ({ type, data }) => {
+  const handleBarCodeScanned = ({ data }) => {
     setScanned(true);
     setCityName(data);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     navigation.navigate({
       name: "SubmitCity",
       params: { cityName: data },
@@ -56,4 +54,5 @@ export default function ScannerScreen() {
       />
     </View>
   );
-}
+};
+export default ScannerScreen;
