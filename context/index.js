@@ -16,7 +16,7 @@ function GlobalData({ children }) {
     "Vienna",
     "Madrid",
     "Moscow",
-    "Praha",
+    "Prague",
   ]);
   return (
     <GlobalDataContext.Provider

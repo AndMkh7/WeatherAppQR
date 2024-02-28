@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { GlobalDataContext } from "../../context";
 import { View, Text } from "react-native";
 import styles from "./style";
