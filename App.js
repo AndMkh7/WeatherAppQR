@@ -1,10 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import AppStack from "./navigation/AppStack";
+import GlobalData from "./context";
 function App() {
   return (
-    <NavigationContainer>
-      <AppStack />
-    </NavigationContainer>
+    <GlobalData>
+      <NavigationContainer>
+        <AppStack />
+      </NavigationContainer>
+    </GlobalData>
   );
 }
 

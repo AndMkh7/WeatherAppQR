@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Camera } from "expo-camera";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import { GlobalDataContext } from "../../context";
 import styles from "./style";
+
 export default function ScannerScreen() {
-  const [hasPermission, setHasPermission] = useState(null);
-  const [scanned, setScanned] = useState(false);
-  const [cityName, setCityName] = useState("");
+  const { hasPermission, setHasPermission, scanned, setScanned, setCityName } =
+    useContext(GlobalDataContext);
   const navigation = useNavigation();
+  const isFocused = useIsFocused();
 
   useEffect(() => {
     const getCameraPermissions = async () => {
@@ -18,6 +20,13 @@ export default function ScannerScreen() {
 
     getCameraPermissions();
   }, []);
+
+  useEffect(() => {
+    if (isFocused) {
+      setScanned(false);
+      setCityName(null);
+    }
+  }, [isFocused]);
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);

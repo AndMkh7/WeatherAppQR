@@ -3,9 +3,16 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  title: {
+    fontSize: 30,
+    color: "#295265",
+    marginBottom: 25,
+    fontWeight: "700",
+  },
+  image: {
+    width: 50,
+    height: 50,
   },
   startButton: {
     backgroundColor: "white",
@@ -18,6 +25,18 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 14,
     color: "blue",
+  },
+  background: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "#295265",
+    marginTop: 15,
+    fontWeight: "500",
   },
 });
 

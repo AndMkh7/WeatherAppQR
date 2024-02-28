@@ -1,9 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "./../screens/HomeScreen/HomeScreen";
-import ScannerScreen from "./../screens/ScannerScreen/ScannerScreen";
-import CityWeatherScreen from "./../screens/CityWeatherScreen/CityWeatherScreen";
+import ScannerScreen from "../screens/ScannerScreen/ScannerScreen";
+import CitiesListScreen from "../screens/CitiesListScreen/CitiesLIstScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import HomeStack from "./HomeStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,11 +18,9 @@ export default function BottomTabNavigation() {
             iconName = focused ? "home-sharp" : "home-outline";
           } else if (route.name === "Scanner") {
             iconName = focused ? "qr-code-sharp" : "qr-code-outline";
-          } else if (route.name === "CityWeather") {
+          } else if (route.name === "CitiesList") {
             iconName = focused ? "list-sharp" : "list-outline";
           }
-
-          // You can return any component that you like here!
           return (
             <Ionicons
               name={iconName}
@@ -35,9 +33,21 @@ export default function BottomTabNavigation() {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Scanner" component={ScannerScreen} />
-      <Tab.Screen name="CityWeather" component={CityWeatherScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeStack}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Scanner"
+        component={ScannerScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="CitiesList"
+        component={CitiesListScreen}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }
