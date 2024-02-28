@@ -13,7 +13,6 @@ const CityWeatherScreen = ({ route }) => {
     setTemperature,
     weatherCondition,
     setWeatherCondition,
-    error,
     setError,
     setCityFromAPI,
   } = useContext(GlobalDataContext);
