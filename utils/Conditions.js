@@ -1,51 +1,51 @@
 export const weatherConditions = {
           Rain: {
             color: '#005BEA',
-            title: 'Raining',
-            subtitle: 'Get a cup of coffee',
+            title: 'Дождь',
+            subtitle: 'Лучше посидеть дома и выпить чашечку чая:))',
             icon: 'weather-rainy'
           },
           Clear: {
             color: '#f7b733',
-            title: 'So Sunny',
-            subtitle: 'It is hurting my eyes',
+            title: 'Солнечно',
+            subtitle: 'Солнечные очки не помешали бы:))',
             icon: 'weather-sunny'
           },
           Thunderstorm: {
             color: '#616161',
-            title: 'A Storm is coming',
-            subtitle: 'Because Gods are angry',
+            title: 'Надвигается гроза',
+            subtitle: 'При возможности не выходите на улицу',
             icon: 'weather-lightning'
           },
           Clouds: {
             color: '#1F1C2C',
-            title: 'Clouds',
-            subtitle: 'Everywhere',
+            title: 'Облачно',
+            subtitle: 'Погодка серая((',
             icon: 'weather-cloudy'
           },
         
           Snow: {
             color: '#00d2ff',
-            title: 'Snow',
-            subtitle: 'Get out and build a snowman for me',
+            title: 'Снег',
+            subtitle: 'Пора готовить снеговика',
             icon: 'weather-snowy'
           },
           Drizzle: {
             color: '#076585',
-            title: 'Drizzle',
-            subtitle: 'Partially raining...',
+            title: 'Моросящий дождь',
+            subtitle: 'Частично идет дождь...',
             icon: 'weather-hail'
           },
           Haze: {
             color: '#66A6FF',
-            title: 'Haze',
-            subtitle: 'Another name for Partial Raining',
+            title: 'Мгла',
+            subtitle: 'Плохая видимость',
             icon: 'weather-hail'
           },
           Mist: {
             color: '#3CD3AD',
-            title: 'Mist',
-            subtitle: "Don't roam in forests!",
+            title: 'Туманно',
+            subtitle: "Не лучшее время бродить по лесу!",
             icon: 'weather-fog'
           }
         };

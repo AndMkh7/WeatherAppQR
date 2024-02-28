@@ -30,7 +30,7 @@ export default function WeatherScreen({ route }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.cancelBox}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("HomeScreen")}
           >
             <Text style={styles.noTxt}>No</Text>
           </TouchableOpacity>
